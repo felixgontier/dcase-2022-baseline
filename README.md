@@ -69,9 +69,11 @@ $ ./get_stanford_models.sh
 
 The Clotho v2.1 dataset can be found on Zenodo: [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.4783391.svg)](https://doi.org/10.5281/zenodo.4783391)
 
-After downloading all `.7z` archives and `.csv` caption files, audio files should be extracted in the `data` directory, in the root baseline directory.
+The test set (without captions) is available separately: [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.3865658.svg)](https://doi.org/10.5281/zenodo.3865658)
 
-Specifically, the directory structure should be as follows:
+After downloading all `.7z` archives and `.csv` caption files from both repositories, audio files should be extracted in the `data` directory.
+
+Specifically, the directory structure should be as follows from the baseline root directory:
 
     data/
      | - clotho_v2/
@@ -83,9 +85,9 @@ Specifically, the directory structure should be as follows:
      |   |   | - *.wav
      |   | - test/
      |   |   | - *.wav
-     | - clotho_captions_development.csv
-     | - clotho_captions_validation.csv
-     | - clotho_captions_evaluation.csv
+     |   | - clotho_captions_development.csv
+     |   | - clotho_captions_validation.csv
+     |   | - clotho_captions_evaluation.csv
 
 ### Data pre-processing
 
