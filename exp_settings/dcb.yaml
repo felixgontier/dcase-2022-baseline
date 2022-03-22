@@ -32,7 +32,7 @@ lm:
     length_penalty: 1.0
     decoding: beam
   eval_model: best
-  eval_checkpoint: 47000
+  eval_checkpoint: 0
   freeze:
     all: false
     attn: false
