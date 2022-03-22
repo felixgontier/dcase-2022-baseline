@@ -1,0 +1,63 @@
+adapt:
+  audio_emb_size: 128
+  nb_layers: 1
+data:
+  features_dir: clotho_v2_vggish
+  input_field_name: vggish_embeddings
+  max_audio_len: 32
+  max_caption_tok_len: 64
+  output_field_name: caption
+  root_dir: data
+lm:
+  config: # Model parameters
+    activation_dropout: 0.1
+    activation_function: 'gelu'
+    attention_dropout: 0.1
+    classifier_dropout: 0.0
+    d_model: 768
+    decoder_attention_heads: 12
+    decoder_ffn_dim: 3072
+    decoder_layers: 6
+    dropout: 0.1
+    encoder_attention_heads: 12
+    encoder_ffn_dim: 3072
+    encoder_layers: 6
+    vocab_size: 50265
+  generation: # Generation parameters
+    early_stopping: true
+    no_repeat_ngram_size: 3
+    num_beams: 4
+    min_length: 5
+    max_length: 100
+    length_penalty: 1.0
+    decoding: beam
+  eval_model: outputs/dcase_baseline_pre_trained.bin
+  eval_checkpoint: 47000
+  freeze:
+    all: false
+    attn: false
+    dec: false
+    dec_attn: false
+    dec_mlp: false
+    dec_self_attn: false
+    enc: false
+    enc_attn: false
+    enc_mlp: false
+    mlp: false
+  tokenizer: facebook/bart-base
+  pretrained: null
+training:
+  eval_steps: 1000
+  force_cpu: false
+  batch_size: 4
+  gradient_accumulation_steps: 2
+  num_workers: 8
+  lr: 1.0e-05
+  nb_epochs: 20
+  save_steps: 1000
+  seed: 0
+workflow:
+  infer: false
+  evaluate: true
+  train: true
+  validate: true
