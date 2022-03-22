@@ -232,10 +232,10 @@ Experiment settings described in the `exp_settings/dcb.yaml` file are:
       save_steps: 1000
       seed: 0
     workflow:
-      infer: false
-      evaluate: true
       train: true
       validate: true
+      evaluate: true
+      infer: false
 
 ### Adaptation settings
 

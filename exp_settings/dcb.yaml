@@ -2,12 +2,12 @@ adapt:
   audio_emb_size: 128
   nb_layers: 1
 data:
+  root_dir: data
   features_dir: clotho_v2_vggish
   input_field_name: vggish_embeddings
+  output_field_name: caption
   max_audio_len: 32
   max_caption_tok_len: 64
-  output_field_name: caption
-  root_dir: data
 lm:
   config: # Model parameters
     activation_dropout: 0.1
@@ -57,7 +57,7 @@ training:
   save_steps: 1000
   seed: 0
 workflow:
-  infer: false
-  evaluate: true
   train: true
   validate: true
+  evaluate: true
+  infer: false
