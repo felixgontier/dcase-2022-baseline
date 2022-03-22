@@ -67,8 +67,11 @@ $ ./get_stanford_models.sh
 
 ### Obtaining the data from Zenodo
 
+The Clotho v2.1 dataset can be found on Zenodo: [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.4783391.svg)](https://doi.org/10.5281/zenodo.4783391)
 
-The directory structure should be as follows:
+After downloading all `.7z` archives and `.csv` caption files, audio files should be extracted in the `data` directory, in the root baseline directory.
+
+Specifically, the directory structure should be as follows:
 
     data/
      | - clotho_v2/
@@ -252,6 +255,7 @@ The `data` block contains settings related to the dataset.
 The `lm` block contains settings related to both the encoder and decoder of the main transformer model, which is derived from BART.
 
 The `config` sub-block details the model, as per the [HuggingFace BART configuration](https://huggingface.co/docs/transformers/v4.16.2/en/model_doc/bart#transformers.BartConfig). Provided settings replicate the bart-base model configuration.
+
 **Note**: The `vocab_size` parameter depends on the pre-trained tokenizer defined by `lm/tokenizer`.
 
 The `generation` sub-block provides generation-specific settings (see the [HuggingFace Generation documentation](https://huggingface.co/docs/transformers/master/en/main_classes/text_generation#transformers.generation_utils.GenerationMixin)):
