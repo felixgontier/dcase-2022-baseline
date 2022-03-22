@@ -93,6 +93,8 @@ Specifically, the directory structure should be as follows from the baseline roo
 
 Pre-processing operations are implemented in `clotho_preprocessing.py`. The pre-processing utilities are also available as a [standalone](https://github.com/felixgontier/dcase-2022-preprocessing).
 
+Dataset preparation is done by running the following command:
+
 ````shell script
 $ python clotho_preprocessing.py --cfg dcb_data
 ````
