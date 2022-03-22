@@ -31,7 +31,7 @@ lm:
     max_length: 100
     length_penalty: 1.0
     decoding: beam
-  eval_model: outputs/dcase_baseline_pre_trained.bin
+  eval_model: best
   eval_checkpoint: 47000
   freeze:
     all: false
@@ -60,4 +60,4 @@ workflow:
   train: true
   validate: true
   evaluate: true
-  infer: false
+  infer: true
