@@ -36,7 +36,7 @@ def preprocess_dataset(config):
                     assert(len(r)==6) # Ensure captions and filename are parsed correctly
                     example_list.append(r)
         
-            for ex in tqdm(example_list[:10]):
+            for ex in tqdm(example_list):
                 file_name = ex[0]
                 if data_path.joinpath(file_name) in audio_list:
                     # Get captions
