@@ -47,7 +47,7 @@ def preprocess_dataset(config):
                     captions = [c.translate(str.maketrans('', '', string.punctuation)).lower() for c in captions]
                     
                     # Compute VGGish embeddings
-                    vggish_embeddings = vggish_model.forward(str(data_path.joinpath(file_name))).detach().numpy()
+                    vggish_embeddings = vggish_model.forward(str(data_path.joinpath(file_name))).detach().cpu().numpy()
                     
                     # Output one npy file per reference caption
                     for i_cap, caption in enumerate(captions):
@@ -69,7 +69,7 @@ def preprocess_dataset(config):
             for ex in tqdm(audio_list):
                 file_name = ex.name
                 # Compute VGGish embeddings
-                vggish_embeddings = vggish_model.forward(str(ex)).detach().numpy()
+                vggish_embeddings = vggish_model.forward(str(ex)).detach().cpu().numpy()
                 
                 # Create recarray
                 temp_rec_array = np.rec.array(np.array(
